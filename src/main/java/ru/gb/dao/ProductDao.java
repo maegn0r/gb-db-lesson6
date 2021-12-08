@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public interface ProductDao {
     Iterable<Product> findAll();
-    Product findById();
+    Product findById(long id);
     Product save(Product product);
     void deleteAll(Collection<Product> products);
 }

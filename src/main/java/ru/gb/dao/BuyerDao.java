@@ -9,4 +9,5 @@ public interface BuyerDao {
     Buyer save(Buyer buyer);
     void deleteById(Long id);
     void delete(Buyer buyer);
+    long findLast();
 }
