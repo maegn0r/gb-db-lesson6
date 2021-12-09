@@ -39,6 +39,7 @@ public class ShopApp {
         order1.setBuyer(buyer1);
         order1.addProduct(product1);
         order1.addProduct(product2);
+        order1.setSum(order1.getOrderCost());
 
         orderDao.save(order1);
 
@@ -47,6 +48,7 @@ public class ShopApp {
         order2.setBuyer(buyer1);
         order2.addProduct(product3);
         order2.addProduct(product4);
+        order2.setSum(order2.getOrderCost());
 
         orderDao.save(order2);
 

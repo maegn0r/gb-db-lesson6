@@ -23,6 +23,9 @@ public class Order {
     @ManyToOne()
     @JoinColumn(name = "buyer_id")
     private Buyer buyer;
+    @Column(name = "sum")
+    private BigDecimal sum;
+
 
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinTable(name = "order_product",
@@ -51,7 +54,7 @@ public class Order {
                 "id=" + id +
                 ", buyer=" + buyer +
                 ", products==" + products +
-                ", fullCost=" + getOrderCost() +
+                ", fullCost=" + sum +
                 '}';
     }
 }
