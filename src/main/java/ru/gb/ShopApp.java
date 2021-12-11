@@ -7,6 +7,8 @@ import ru.gb.entity.Order;
 import ru.gb.entity.Product;
 import ru.gb.service.*;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 
 public class ShopApp {
@@ -50,13 +52,15 @@ public class ShopApp {
         orderService.save(order2);
 
         System.out.println(buyerService.findById(buyerService.count()).getOrders());
-//        Product product = Product.builder()
-//                .title("Sad dreams")
-//                .cost(new BigDecimal(1000))
-//                .manufactureDate(LocalDate.now())
-//                .manufacturer(manufacturerService.findById(1L))
-//                .build();
-//
-//        System.out.println(productService.save(product));
+        Product product = Product.builder()
+                .title("Apple Pie")
+                .cost(new BigDecimal(1000))
+                .manufactureDate(LocalDate.now())
+                .manufacturer(manufacturerService.findById(1L))
+                .build();
+
+        System.out.println(productService.save(product));
+        System.out.println(productService.findByOrderIdAndSortByCostDesc(orderService.findById(34L)));
+        System.out.println(productService.findByOrderIdAndSortByCostAsc(orderService.findById(34L)));
    }
 }
