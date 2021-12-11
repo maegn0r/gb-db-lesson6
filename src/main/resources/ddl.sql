@@ -34,7 +34,7 @@ CREATE TABLE CART_PRODUCT
 
     PRIMARY KEY (CART_ID, PRODUCT_ID),
 
-    CONSTRAINT fk_cart_product_cart,
+    CONSTRAINT fk_cart_product_cart
     FOREIGN KEY (CART_ID)
         REFERENCES CART (ID),
 
@@ -42,5 +42,3 @@ CREATE TABLE CART_PRODUCT
         FOREIGN KEY (PRODUCT_ID)
             REFERENCES PRODUCT (ID)
 );
-
-
