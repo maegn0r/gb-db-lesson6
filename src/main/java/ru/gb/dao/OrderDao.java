@@ -1,12 +1,8 @@
 package ru.gb.dao;
 
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import ru.gb.entity.Order;
 
-import java.util.Collection;
-
-public interface OrderDao {
-    Iterable<Order> findAll();
-    Order findById();
-    Order save(Order order);
-    void deleteAll(Collection<Order> orders);
+public interface OrderDao extends JpaRepository<Order,Long> {
 }
