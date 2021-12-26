@@ -35,10 +35,6 @@ public class Product {
             inverseJoinColumns = @JoinColumn(name = "cart_id"))
     private Set<Cart> carts;
 
-//    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-//    @JoinTable(name = "orders",
-//            joinColumns = @JoinColumn(name = "product_id"),
-//            inverseJoinColumns = @JoinColumn(name = "order_id"))
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinTable(name = "order_product",
             joinColumns = @JoinColumn(name = "product_id"),
